@@ -15,10 +15,7 @@ def profile_page(username=''):
 
 @app.route('/login', methods=['POST', 'GET'])
 def login_page():
-    return """
-    <h2>Login Page</h2>
-    Or goto <a href="%s">profile page</a>
-    """ % url_for('profile_page', username='Aris')
+    return render_template('login.html')
 
 @app.route('/product')
 def product_page():
@@ -26,6 +23,12 @@ def product_page():
     title = "Product Page"
     return render_template('hello.html', 
         content=content, title=title)
+
+@app.route('/register')
+def register_page():
+    default_email = 'aris@gmail.com'
+    my_list = ['Menu 1', 'Menu 2', 'Menu 3']
+    return render_template('register.html', email=default_email, menus=my_list)
 
 
 
