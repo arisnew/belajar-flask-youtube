@@ -15,10 +15,11 @@
                 <header>
                     {% block header %}{% endblock %}
                 </header>
-                {% block content %}{% endblock %}
             </div>
         </div>
     </div>
+
+    {% block content %}{% endblock %}
     
     <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
 </body>
